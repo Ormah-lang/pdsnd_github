@@ -14,9 +14,8 @@ def get_valid_city_from_user():
         (str) city - name of the valid city
     """
     city = input('Enter your city (city should be from chicago, new york city or washington): ').strip().lower()             
-    while city not in CITY_DATA:         
-        print('Please enter a valid city')
-        city = input('Enter your city (city should be from chicago, new york city or washington): ').strip().lower()
+    while city not in CITY_DATA:
+        city = input('Please enter a valid city (city should be from chicago, new york city or washington): ').strip().lower()
     return city
 
 def get_valid_month_from_user():
