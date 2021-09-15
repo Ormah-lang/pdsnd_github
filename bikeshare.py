@@ -6,7 +6,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-def get_valid_city_from_user():
+def get_city_from_user():
     """
     Gets valid city from user and handles invalid user input
 
@@ -14,12 +14,11 @@ def get_valid_city_from_user():
         (str) city - name of the valid city
     """
     city = input('Enter your city (city should be from chicago, new york city or washington): ').strip().lower()             
-    while city not in CITY_DATA:         
-        print('Please enter a valid city')
-        city = input('Enter your city (city should be from chicago, new york city or washington): ').strip().lower()
+    while city not in CITY_DATA:
+        city = input('Please enter a valid city (city should be from chicago, new york city or washington): ').strip().lower()
     return city
 
-def get_valid_month_from_user():
+def get_month_from_user():
     """
     Gets valid month of the year from user and handles invalid user input.
 
@@ -32,7 +31,7 @@ def get_valid_month_from_user():
         month = input('Please enter a valid month from January to June or type \'all\' for all months: ').strip().lower()
     return month
 
-def get_valid_day_from_user():
+def get_day_from_user():
     """
     Gets valid day of the week from user and handles invalid user input.
 
@@ -57,13 +56,13 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     
     # get user input for city (chicago, new york city, washington)
-    city = get_valid_city_from_user()
+    city = get_city_from_user()
         
     # get user input for month (all, january, february, ... , june)
-    month = get_valid_month_from_user()
+    month = get_month_from_user()
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
-    day = get_valid_day_from_user()
+    day = get_day_from_user()
         
     print('-'*40)
     return city, month, day
